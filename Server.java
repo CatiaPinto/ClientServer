@@ -13,7 +13,7 @@ public class Server {
 
     public static void main(String[] args) throws IOException {
 
-        ServerSocket serverSocket = new ServerSocket(8094);
+        ServerSocket serverSocket = new ServerSocket(8095);
 
         while (true) {
 
