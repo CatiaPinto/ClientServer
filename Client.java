@@ -11,7 +11,7 @@ public class Client {
 
     public static void main(String[] args) throws IOException {
 
-        Socket s = new Socket("localhost", 9090);
+        Socket s = new Socket("localhost", 8087);
         BufferedReader input =
                 new BufferedReader(new InputStreamReader(s.getInputStream()));
         String answer = input.readLine();
