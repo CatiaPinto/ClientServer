@@ -7,9 +7,11 @@ TEST_OUTCOME="testOutcome.txt"
 curl localhost:8087 > $TEST_OUTCOME
 
 EXPECTED_OUTCOME="expectedOutcome.txt"
-DIFF=(diff -q "$TEST_OUTCOME" "$EXPECTED_OUTCOME")
 
-if [ "$DIFF" ]
+diff --brief "$TEST_OUTCOME" "$EXPECTED_OUTCOME"
+DIFF=$?
+
+if [ $DIFF -eq 1 ]
 then
 	echo "Test Fail"
 	echo "Expected" 
