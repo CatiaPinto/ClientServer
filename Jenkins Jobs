@@ -1,0 +1,39 @@
+BuildDocker
+build and run the docker container with the server.
+
+Project url: https://github.com/CatiaPinto/ClientServer.git/
+Build when a change is pushed to GitHub
+Schedule -> H/5 * * * *
+
+Build
+docker build -t serverimage:v1 .
+docker run -d -p 8087:8087 serverimage:v1
+
+--------------------------
+
+BuildServer
+Testing the server build from the GitHub.
+Automatically builds when some change occurs in the repository.
+
+Build 
+javac Server.java
+
+
+-------------------
+
+StopAndRemoveDockerContainer
+this job stops and remove the previous container.
+should run this before build the container to prevent errors.
+
+Build
+service docker stop
+service docker start
+
+
+---------------------
+
+TestServer
+Tests if the server is responding to requests.
+
+Build
+./test.sh
